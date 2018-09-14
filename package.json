@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "babel": "babel src -d views"
+    "babel": "babel src -d views",
+    "build": "npm run pack && npm run babel",
+    "start": "node index.js",
+    "pack": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +21,11 @@
   },
   "homepage": "https://github.com/drdpedroso/growth-book-ssr#readme",
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
     "babel-loader": "^8.0.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
@@ -36,6 +42,8 @@
     "webpack-cli": "^3.1.0"
   },
   "dependencies": {
+    "emotion": "^9.2.8",
+    "emotion-server": "^9.2.8",
     "react": "^16.5.1",
     "react-dom": "^16.5.1"
   }
