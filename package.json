@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel src -d views"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,27 @@
   "bugs": {
     "url": "https://github.com/drdpedroso/growth-book-ssr/issues"
   },
-  "homepage": "https://github.com/drdpedroso/growth-book-ssr#readme"
+  "homepage": "https://github.com/drdpedroso/growth-book-ssr#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
+    "express": "^4.16.3",
+    "prettier": "^1.14.2",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1"
+  }
 }
