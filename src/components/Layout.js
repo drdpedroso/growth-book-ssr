@@ -2,15 +2,15 @@ import React from 'react'
 import styled from 'react-emotion'
 
 const Container = styled('div')`
-  background: #333;
-  color: rebeccapurple;
+  background: yellow;
+  color: black;
 `
 
 const Layout = (props) => {
   return (
-    <div>
-      Layout muleke
-    </div>
+    <Container>
+      Layout muleke33
+    </Container>
   )
 }
 
