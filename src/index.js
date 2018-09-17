@@ -1,6 +1,8 @@
 import express from 'express'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
+import { renderStylesToString } from 'emotion-server'
+
 import App from './App'
 import { StaticRouter } from 'react-router-dom'
 
@@ -9,7 +11,13 @@ const app = express()
 app.use(express.static('public'))
 
 app.get('*', (req, res) => {
-  // console.log(req)
+  const toRender = renderStylesToString(
+    renderToString(
+      <StaticRouter location={req.url} context={{ data: 'menor' }}>
+        <App />
+      </StaticRouter>
+    )
+  )
   res.send(`
       <!DOCTYPE html>
       <html lang="en">
@@ -18,11 +26,7 @@ app.get('*', (req, res) => {
             <title>Title</title>
         </head>
         <body>
-            <div id="root">${renderToString(
-              <StaticRouter location={req.url} context={{data: 'menor'}}>
-                <App />
-              </StaticRouter>
-            )}</div>
+            <div id="root">${toRender}</div>
         </body>
         </html>`)
 })
