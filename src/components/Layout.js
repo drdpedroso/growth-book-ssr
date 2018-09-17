@@ -1,10 +1,15 @@
 import React from 'react'
+import styled from 'react-emotion'
+
+const Container = styled('div')`
+  background: #333;
+  color: rebeccapurple;
+`
 
 const Layout = (props) => {
-  console.log(2, props)
   return (
     <div>
-      Layout lekinho!
+      Layout muleke
     </div>
   )
 }
